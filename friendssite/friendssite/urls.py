@@ -22,3 +22,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]+static(settings.MEDIA_URL,
 document_root = settings.MEDIA_ROOT)
+
+admin.site.site_header = 'Python Friends Site'
+#admin.site.index_title='Site Features Area'
