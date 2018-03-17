@@ -1,18 +1,6 @@
-<html>
-<head>
-<title>Information of {{p.name}}</title>
-</head>
-<body>
-<table width=95%>
-	<tr>
-		<td width=50% bgcolor="blue">
-			<font size="8" color="white">Personal Information</font>
-		</td>
-		<td width=50% bgcolor="blue">
-			<font size="8" color="white">Contact Info</font>
-		</td>
-	</tr>
-	<tr>
+{%extends 'base.html'%}
+{%block title %} {{p.name}} {%endblock%}
+{%block content%} 
 		<td bgcolor="lightblue">
 			<li>Name: {{p.name}}</li>
 			<li>Birthday: {{p.birthday}}</li>
@@ -23,7 +11,4 @@
 			<li>Email: {{p.email}}</li>
 			<li>Favourite website: {{p.favouriteURL}}</li>
 		</td>
-	</tr>
-</table>
-</body>
-</html>
+{%endblock%}
