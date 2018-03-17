@@ -22,6 +22,7 @@ from myfriends.views import index
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 	url(r'^$', index),
+	url(r'^friends/info/(\d+)$', details),
 
 ]+static(settings.MEDIA_URL,
 document_root = settings.MEDIA_ROOT)
