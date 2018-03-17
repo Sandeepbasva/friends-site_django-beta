@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Person
 
@@ -16,18 +16,5 @@ def index(request):
 	return response
 
 def details(request,pid=0):
-	response = HttpResponse()
-	response.write('<html><body>')
-	try:
-		p=Person.objects.get(id=pid)
-		response.write('<h1>Details of Person %s</h1><hr>'%p.name)
-		response.write('<li>Gender: %s</li>'%p.gender)
-		response.write('<li>Birthday: %s</li>'%p.birthday)
-		response.write('<li>Favourite URL: %s</li>'%p.favouriteURL)
-		response.write('<li>Message: %s</li>'%p.description)
-	
-	except Person.DoesNotExist:
-		print('The person details does not exist')
-	
-	response.write('</body></html>')
-	return response
+	p=get_object_or_404(Person,pk=pid)
+	return render(request, 'person_details.html', {'p':p})
