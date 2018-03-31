@@ -4,11 +4,14 @@
 		<td bgcolor="lightblue">
 			<li>Name: {{p.name}}</li>
 			<li>Birthday: {{p.birthday}}</li>
-			<li>Gender: {{p.message}}</li>
+			<li>Gender: {{p.gender}}</li>
 			<li>Message: {{p.description}}</li>
 		</td>
 		<td bgcolor="violet">
 			<li>Email: {{p.email}}</li>
 			<li>Favourite website: {{p.favouriteURL}}</li>
+		</td>
+		<td>
+			<img src="{{p.photo.url}}" alt="My photo" width=300 height=250/>		
 		</td>
 {%endblock%}
