@@ -6,13 +6,8 @@ from .models import Person
 
 def index(request):
 	response = HttpResponse()
-	response.write('<html><body>')
-	response.write('<h1>Python Friends Site<h1>')
-	plist = Person.objects.all()
-	for p in plist:
-		link = '<a href="friends/info/%d">'%p.id
-		response.write('<li>%s%s</a></li>'%(link,p.name))
-	response.write('</body></html>')
+	response.write('<img src="media/banner32.jpg" alt="My friends site banner" width=100% height=320/>')
+	response.write('<body style=background-image:url("media/bg2.jpg")>')
 	return response
 
 def details(request,pid=0):
